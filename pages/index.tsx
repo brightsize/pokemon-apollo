@@ -3,7 +3,7 @@ import type { InferGetServerSidePropsType, NextPage } from "next";
 import { getApolloClient } from "../apollo-client";
 import { CardGrid, CardLink, PokemonCard } from "../components";
 import { DocumentHead } from "../models";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Page.module.css";
 import { getRandomPokemonId } from "../utils";
 
 type Pokemon = {
