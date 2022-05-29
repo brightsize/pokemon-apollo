@@ -2,7 +2,7 @@
   display: grid;
   width: 100%;
   max-width: var(--max-width);
-  gap: 24px;
+  gap: var(--grid-gap);
 }
 
 @media (min-width: 600px) {
