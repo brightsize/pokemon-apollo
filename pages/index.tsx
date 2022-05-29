@@ -92,7 +92,7 @@ const Home: NextPage<
           </p>
         </CardLink>
 
-        <PokemonCard {...pokemon} />
+        <PokemonCard {...pokemon} style={{ gridColumn: "span 2" }} />
       </CardGrid>
     </main>
   );

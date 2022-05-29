@@ -4,10 +4,15 @@ import styles from "./Card.module.css";
 
 type CardProps = {
   children: React.ReactNode;
+  style?: React.CSSProperties;
 };
 
-const Card = ({ children }: CardProps) => {
-  return <div className={styles.card}>{children}</div>;
+const Card = ({ children, style }: CardProps) => {
+  return (
+    <div className={styles.card} style={style}>
+      {children}
+    </div>
+  );
 };
 
 export { Card };

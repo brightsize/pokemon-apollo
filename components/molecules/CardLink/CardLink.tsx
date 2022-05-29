@@ -8,11 +8,12 @@ type CardLinkProps = {
   href: string;
   title: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 };
 
-const CardLink = ({ href, title, children }: CardLinkProps) => {
+const CardLink = ({ href, title, children, style }: CardLinkProps) => {
   return (
-    <Card>
+    <Card style={style}>
       <Link href={href}>
         <a className={styles["card-link"]}>
           <h2>{title} &rarr;</h2>

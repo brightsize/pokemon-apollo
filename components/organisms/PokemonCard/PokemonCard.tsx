@@ -1,23 +1,30 @@
 import Image from "next/image";
 import React from "react";
+import styles from "./PokemonCard.module.css";
 import { CardLink } from "../../molecules";
+import { POKEMON } from "../../../config";
 
 type PokemonCardProps = {
   name: string;
+  number: string;
   id: string;
   image: string;
+  style?: React.CSSProperties;
 };
 
-const PokemonCard = ({ name, id, image }: PokemonCardProps) => {
+const PokemonCard = ({ name, number, id, image, style }: PokemonCardProps) => {
   return (
-    <CardLink title={name} href={`/pokemon/${id}`}>
-      <Image
-        src={image}
-        height="150px"
-        width="150px"
-        objectFit="contain"
-        alt={name}
-      />
+    <CardLink
+      title={`Featured ${POKEMON}`}
+      href={`/pokemon/${id}`}
+      style={style}
+    >
+      <h3>
+        Number: {number} - {name}
+      </h3>
+      <div className={styles["image-container"]}>
+        <Image src={image} layout="fill" objectFit="contain" alt={name} />
+      </div>
     </CardLink>
   );
 };
