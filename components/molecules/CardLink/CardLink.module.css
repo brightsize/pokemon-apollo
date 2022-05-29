@@ -1,0 +1,22 @@
+.card-link:hover,
+.card-link:focus,
+.card-link:active {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.card-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--border-radius);
+}
+
+.card-link:hover::after,
+.card-link:focus::after,
+.card-link:active::after {
+  background-color: #ffffff07;
+}
