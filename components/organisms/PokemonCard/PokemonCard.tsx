@@ -16,7 +16,7 @@ const PokemonCard = ({ name, number, id, image, style }: PokemonCardProps) => {
   return (
     <CardLink
       title={`Featured ${POKEMON}`}
-      href={`/pokemon/${id}`}
+      href={`/pokedex/${id}`}
       style={style}
     >
       <h3>
