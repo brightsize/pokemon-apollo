@@ -13,8 +13,8 @@ type CardLinkProps = {
 const CardLink = ({ href, title, children }: CardLinkProps) => {
   return (
     <Card>
-      <Link href={href} className={styles["card-link"]}>
-        <a>
+      <Link href={href}>
+        <a className={styles["card-link"]}>
           <h2>{title} &rarr;</h2>
         </a>
       </Link>
