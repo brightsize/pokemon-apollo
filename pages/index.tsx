@@ -1,5 +1,5 @@
 import type { InferGetServerSidePropsType, NextPage } from "next";
-import { CardLink } from "../components";
+import { CardGrid, CardLink } from "../components";
 import { DocumentHead } from "../models";
 import styles from "../styles/Home.module.css";
 
@@ -31,13 +31,22 @@ const Home: NextPage<
         them for fights. Myself...I fetch pokémon with GraphQL.
       </p>
 
-      <div className={styles.grid}>
-        <CardLink href="https://nextjs.org/docs" title="Documentation">
-          <p>Find in-depth information about Next.js features and API.</p>
+      <CardGrid>
+        <CardLink href="/pokedex" title="Pokedex">
+          <p>
+            To make a complete guide on all the Pokémon in the world… That was
+            my dream! But, I&apos;m too old! I can&apos;t do it! So, I want you
+            to check out this page!
+          </p>
         </CardLink>
 
-        <CardLink href="https://nextjs.org/learn" title="Learn">
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
+        <CardLink href="/types" title="Types">
+          <p>
+            Looking for the different Pokémon Types? This page is for you!{" "}
+            <br />
+            <br />
+            🐛 🐉 ⚡️ 🥊 🔥 🦅 👻 🌱 🟤 ❄️ 🐭 ☠️ 🔮 🪨 💦
+          </p>
         </CardLink>
 
         <CardLink
@@ -53,7 +62,7 @@ const Home: NextPage<
         >
           <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
         </CardLink>
-      </div>
+      </CardGrid>
     </main>
   );
 };

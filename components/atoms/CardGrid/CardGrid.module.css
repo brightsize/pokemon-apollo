@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+  width: 100%;
+  max-width: var(--max-width);
+  gap: 24px;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, calc(50% - 12px));
+  }
+}

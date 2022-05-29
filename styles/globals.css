@@ -3,6 +3,8 @@
   --text: #fdfdfd;
   --blue: #9ac9fe;
   --border-radius: 10px;
+  --max-width: 800px;
+  --card-max-width: 300px;
 }
 
 html,
@@ -22,4 +24,6 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

@@ -1,3 +1,7 @@
+.card-link {
+  padding: 0.25rem 0;
+}
+
 .card-link:hover,
 .card-link:focus,
 .card-link:active {

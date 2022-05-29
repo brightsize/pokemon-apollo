@@ -6,15 +6,16 @@ import styles from "./Layout.module.css";
 
 type LayoutProps = {
   children: React.ReactNode;
-  documentHead: DocumentHead;
+  documentHead?: DocumentHead;
 };
 
 const Layout = ({ children, documentHead }: LayoutProps) => {
+  const title = `Pokémon | ${documentHead?.title ?? ""}`;
   return (
     <div className={styles.container}>
       <Head>
-        <title>Pokémon | {documentHead.title}</title>
-        <meta name="description" content={documentHead.description} />
+        <title>{title}</title>
+        <meta name="description" content={documentHead?.description ?? ""} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {children}

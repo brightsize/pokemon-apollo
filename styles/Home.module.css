@@ -34,7 +34,7 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
-  max-width: 800px;
+  max-width: var(--max-width);
 }
 
 .code {
@@ -46,22 +46,7 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
 .logo {
   height: 1em;
   margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }
