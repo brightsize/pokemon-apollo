@@ -4,6 +4,7 @@ import { getApolloClient } from "../apollo-client";
 import { CardGrid, CardLink, PokemonCard } from "../components";
 import { DocumentHead } from "../models";
 import styles from "../styles/Page.module.css";
+import homeStyles from "../styles/Home.module.css";
 import { getRandomPokemonId } from "../utils";
 
 type Pokemon = {
@@ -92,7 +93,9 @@ const Home: NextPage<
           </p>
         </CardLink>
 
-        <PokemonCard {...pokemon} style={{ gridColumn: "span 2" }} />
+        <div className={homeStyles.featured_pokemon}>
+          <PokemonCard {...pokemon} />
+        </div>
       </CardGrid>
     </main>
   );

@@ -1,0 +1,5 @@
+@media (min-width: 600px) {
+  .featured_pokemon {
+    grid-column: span 2;
+  }
+}
