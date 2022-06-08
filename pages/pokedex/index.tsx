@@ -34,16 +34,17 @@ export const getServerSideProps = async () => {
 const Pokedex: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ data }) => {
+  const pokes = data;
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>The PokemonCard calls them all featured</h1>
+      <h1 className={styles.title}>Think of a clever title</h1>
 
       <p className={styles.description}>
-        All the {POKEMON} are <i>featured</i> here!
+        {pokes.length} {POKEMON} are featured here!
       </p>
 
       <CardGrid>
-        {data.map((pokemon: Pokemon) => (
+        {pokes.map((pokemon: Pokemon) => (
           <PokemonCard key={pokemon.id} {...pokemon} />
         ))}
       </CardGrid>
