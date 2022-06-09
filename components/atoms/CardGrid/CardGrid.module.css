@@ -10,3 +10,15 @@
     grid-template-columns: repeat(2, calc(50% - 12px));
   }
 }
+@media (min-width: 1007px) {
+  .grid {
+    grid-template-columns: repeat(3, calc(33% - 12px));
+    max-width: 1200px;
+  }
+}
+@media (min-width: 1900px) {
+  .grid {
+    grid-template-columns: repeat(4, calc(25% - 12px));
+    max-width: 1800px;
+  }
+}
