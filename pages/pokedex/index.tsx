@@ -6,7 +6,6 @@ import { CardGrid } from '../../components';
 import styles from '../../styles/Page.module.css';
 import { PokemonCard } from '../../components';
 import { POKEMON } from '../../config';
-import type { PokemonCardProps } from '../../components';
 
 export const getServerSideProps = async () => {
   const client = getApolloClient();
