@@ -7,7 +7,7 @@ import styles from "../styles/Page.module.css";
 import homeStyles from "../styles/Home.module.css";
 import { getRandomPokemonId } from "../utils";
 
-export type Pokemon = {
+type Pokemon = {
   pokemon: { id: string; name: string; number: string; image: string };
 };
 

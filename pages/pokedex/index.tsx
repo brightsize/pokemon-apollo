@@ -1,14 +1,13 @@
 import { gql } from "@apollo/client";
 import { getApolloClient } from "../../apollo-client";
 import type { InferGetServerSidePropsType, NextPage } from "next";
-import type { Pokemon } from "..";
 import { CardGrid } from "../../components";
 import styles from "../../styles/Page.module.css";
 import { PokemonCard } from "../../components";
 import { POKEMON } from "../../config";
 
 type Pokemons = {
-  pokemons: [Pokemon];
+  pokemons: { id: string; name: string; number: string; image: string }[];
 };
 
 export const getServerSideProps = async () => {
@@ -28,25 +27,25 @@ export const getServerSideProps = async () => {
   });
   return {
     props: {
-      pokes: data.pokemons,
+      pokemons: data.pokemons,
     },
   };
 };
 
 const Pokedex: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ pokes }) => {
+> = ({ pokemons }) => {
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>Think of a clever title</h1>
+      <h1 className={styles.title}></h1>
 
       <p className={styles.description}>
-        {pokes.length} {POKEMON} are featured here!
+        {pokemons.length} {POKEMON} are featured here!
       </p>
 
       <CardGrid>
-        {pokes.map((pokemon) => (
-          <PokemonCard key={pokemon.id} {...pokemon} />
+        {pokemons.map((poke) => (
+          <PokemonCard key={poke.id} {...poke} />
         ))}
       </CardGrid>
     </main>
