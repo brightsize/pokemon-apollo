@@ -24,15 +24,14 @@ export const getServerSideProps = async () => {
   });
   return {
     props: {
-      data: data.pokemons,
+      pokes: data.pokemons,
     },
   };
 };
 
 const Pokedex: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ data }) => {
-  const pokes = data;
+> = ({ pokes }) => {
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>Think of a clever title</h1>
