@@ -1,11 +1,11 @@
-import { gql } from '@apollo/client';
-import { getApolloClient } from '../../apollo-client';
-import type { InferGetServerSidePropsType, NextPage } from 'next';
-import type { Pokemon } from '..';
-import { CardGrid } from '../../components';
-import styles from '../../styles/Page.module.css';
-import { PokemonCard } from '../../components';
-import { POKEMON } from '../../config';
+import { gql } from "@apollo/client";
+import { getApolloClient } from "../../apollo-client";
+import type { InferGetServerSidePropsType, NextPage } from "next";
+import type { Pokemon } from "..";
+import { CardGrid } from "../../components";
+import styles from "../../styles/Page.module.css";
+import { PokemonCard } from "../../components";
+import { POKEMON } from "../../config";
 
 type Pokemons = {
   pokemons: [Pokemon];
@@ -45,7 +45,7 @@ const Pokedex: NextPage<
       </p>
 
       <CardGrid>
-        {pokes.map((pokemon: Pokemon) => (
+        {pokes.map((pokemon) => (
           <PokemonCard key={pokemon.id} {...pokemon} />
         ))}
       </CardGrid>
