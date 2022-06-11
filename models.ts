@@ -3,7 +3,7 @@ export type DocumentHead = {
   description: string;
 };
 
-export interface Pokemon {
+export interface PokemonData {
   classification: string;
   fleeRate: string;
   height: { minimum: string; maximum: string };
@@ -17,4 +17,7 @@ export interface Pokemon {
   types: string[];
   weaknesses: string[];
   weight: { minimum: string; maximum: string };
+}
+export interface Pokemon {
+  pokemon: PokemonData;
 }

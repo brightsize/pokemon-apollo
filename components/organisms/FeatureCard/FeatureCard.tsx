@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import styles from "./FeatureCard.module.css";
 import { Card } from "../../../components";
-import { Pokemon } from "../../../models";
+import { PokemonData } from "../../../models";
 
 const FeatureCard = ({
   classification,
@@ -17,7 +17,7 @@ const FeatureCard = ({
   types,
   weaknesses,
   weight,
-}: Pokemon) => {
+}: PokemonData) => {
   const typeBadges = types.map((type) => {
     return (
       <div key={type} className={styles.type_badge}>

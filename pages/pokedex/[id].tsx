@@ -7,13 +7,14 @@ import type {
 import { getApolloClient } from "../../apollo-client";
 import styles from "../../styles/Page.module.css";
 import { FeatureCard } from "../../components/organisms/FeatureCard";
+import { Pokemon } from "../../models";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
 
   const client = getApolloClient();
 
-  const { data } = await client.query({
+  const { data } = await client.query<Pokemon>({
     query: gql`
       query pokemon($id: String) {
         pokemon(id: $id) {
