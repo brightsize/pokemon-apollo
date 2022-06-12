@@ -1,2 +1,2 @@
-export * from './CardGrid';
-export * from './PokedexGrid';
+export * from "./CardGrid";
+export * from "./PokedexGrid";
