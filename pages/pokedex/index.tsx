@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { gql } from '@apollo/client';
 import type { Pokemon } from '..';
 import { getApolloClient } from '../../apollo-client';
@@ -7,6 +8,19 @@ import styles from '../../styles/Page.module.css';
 import { PokemonCard } from '../../components';
 import { POKEMON } from '../../config';
 import type { PokemonCardProps } from '../../components';
+=======
+import { gql } from "@apollo/client";
+import { getApolloClient } from "../../apollo-client";
+import type { InferGetServerSidePropsType, NextPage } from "next";
+import { PokedexGrid } from "../../components";
+import styles from "../../styles/Page.module.css";
+import { PokemonCard } from "../../components";
+import { POKEMON } from "../../config";
+
+type Pokemons = {
+  pokemons: { id: string; name: string; number: string; image: string }[];
+};
+>>>>>>> Stashed changes
 
 export const getServerSideProps = async () => {
   const client = getApolloClient();
@@ -42,11 +56,17 @@ const Pokedex: NextPage<
         {pokes.length} {POKEMON} are featured here!
       </p>
 
+<<<<<<< Updated upstream
       <CardGrid>
         {pokes.map((pokemon: Pokemon) => (
           <PokemonCard key={pokemon.id} {...pokemon} />
+=======
+      <PokedexGrid>
+        {pokemons.map((poke) => (
+          <PokemonCard key={poke.id} {...poke} />
+>>>>>>> Stashed changes
         ))}
-      </CardGrid>
+      </PokedexGrid>
     </main>
   );
 };
