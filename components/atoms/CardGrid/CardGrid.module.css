@@ -1,4 +1,5 @@
-.grid {
+.grid,
+.pokedexGrid {
   display: grid;
   width: 100%;
   max-width: var(--max-width);
@@ -8,5 +9,17 @@
 @media (min-width: 600px) {
   .grid {
     grid-template-columns: repeat(2, calc(50% - 12px));
+  }
+}
+
+@media (min-width: 600px) {
+  .pokedexGrid {
+    grid-template-columns: repeat(2, calc(50% - 12px));
+  }
+}
+@media (min-width: 1000px) {
+  .pokedexGrid {
+    grid-template-columns: repeat(3, calc(33% - 12px));
+    max-width: 1300px;
   }
 }
