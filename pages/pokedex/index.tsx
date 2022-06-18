@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 import { getApolloClient } from "../../apollo-client";
 import type { InferGetServerSidePropsType, NextPage } from "next";
-import { PokedexGrid } from "../../components";
+import { CardGrid } from "../../components";
 import styles from "../../styles/Page.module.css";
 import { PokemonCard } from "../../components";
 import { POKEMON } from "../../config";
@@ -43,11 +43,11 @@ const Pokedex: NextPage<
         {pokemons.length} {POKEMON} are featured here!
       </p>
 
-      <PokedexGrid>
+      <CardGrid className={"pokedexGrid"}>
         {pokemons.map((poke) => (
           <PokemonCard key={poke.id} {...poke} />
         ))}
-      </PokedexGrid>
+      </CardGrid>
     </main>
   );
 };
