@@ -43,7 +43,7 @@ const Pokedex: NextPage<
         {pokemons.length} {POKEMON} are featured here!
       </p>
 
-      <CardGrid>
+      <CardGrid className={"pokedexGrid"}>
         {pokemons.map((poke) => (
           <PokemonCard key={poke.id} {...poke} />
         ))}
