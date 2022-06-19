@@ -1,7 +1,5 @@
-const GRAPHQL_API = require("./config/constants").GRAPHQL_API;
-
 module.exports = {
-  schema: GRAPHQL_API,
+  schema: "https://graphql-pokemon2.vercel.app/",
   documents: ["./**/*.graphql"],
   generates: {
     "./index.ts": {
