@@ -2,7 +2,7 @@ module.exports = {
   schema: "https://graphql-pokemon2.vercel.app/",
   documents: ["./**/*.graphql"],
   generates: {
-    "./index.ts": {
+    "./generated/types.ts": {
       plugins: [
         "typescript",
         "typescript-operations",

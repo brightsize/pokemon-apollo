@@ -36,3 +36,6 @@ yarn-error.log*
 
 # editor formatting
 .prettierrc.js
+
+# graphql-codegen
+generated
