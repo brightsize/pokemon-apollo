@@ -3,14 +3,11 @@ import React from "react";
 import styles from "./PokemonCard.module.css";
 import { CardLink } from "../../molecules";
 import { POKEMON } from "../../../config";
+import { Pokemon } from "@generated";
 
-type PokemonCardProps = {
-  name: string;
-  number: string;
-  id: string;
-  image: string;
+interface PokemonCardProps extends Pokemon {
   style?: React.CSSProperties;
-};
+}
 
 const PokemonCard = ({ name, number, id, image, style }: PokemonCardProps) => {
   return (
@@ -23,7 +20,12 @@ const PokemonCard = ({ name, number, id, image, style }: PokemonCardProps) => {
         Number: {number} - {name}
       </h3>
       <div className={styles["image-container"]}>
-        <Image src={image} layout="fill" objectFit="contain" alt={name} />
+        <Image
+          src={image ?? ""}
+          layout="fill"
+          objectFit="contain"
+          alt={name ?? ""}
+        />
       </div>
     </CardLink>
   );

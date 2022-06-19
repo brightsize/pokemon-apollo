@@ -1,4 +1,3 @@
-import { gql } from "@apollo/client";
 import type { InferGetServerSidePropsType, NextPage } from "next";
 import { getApolloClient } from "../apollo-client";
 import { CardGrid, CardLink, PokemonCard } from "../components";
@@ -6,10 +5,11 @@ import { DocumentHead } from "../models";
 import styles from "../styles/Page.module.css";
 import homeStyles from "../styles/Home.module.css";
 import { getRandomPokemonId } from "../utils";
-
-type Pokemon = {
-  pokemon: { id: string; name: string; number: string; image: string };
-};
+import {
+  PokemonDocument,
+  PokemonQuery,
+  PokemonQueryVariables,
+} from "@generated";
 
 export const getServerSideProps = async () => {
   const documentHead: DocumentHead = {
@@ -20,35 +20,13 @@ export const getServerSideProps = async () => {
   const client = getApolloClient();
   const randomPokemonId = getRandomPokemonId();
 
-  const { data } = await client.query<Pokemon>({
-    query: gql`
-      query FeaturedPokemon($id: String!) {
-        pokemon(id: $id) {
-          id
-          number
-          name
-          weight {
-            minimum
-            maximum
-          }
-          height {
-            minimum
-            maximum
-          }
-          classification
-          types
-          resistant
-          weaknesses
-          fleeRate
-          maxCP
-          maxHP
-          image
-        }
-      }
-    `,
-    variables: {
-      id: randomPokemonId,
-    },
+  const variables: PokemonQueryVariables = {
+    id: randomPokemonId,
+  };
+
+  const { data } = await client.query<PokemonQuery>({
+    query: PokemonDocument,
+    variables,
   });
 
   return {
@@ -93,9 +71,11 @@ const Home: NextPage<
           </p>
         </CardLink>
 
-        <div className={homeStyles.featured_pokemon}>
-          <PokemonCard {...pokemon} />
-        </div>
+        {pokemon && (
+          <div className={homeStyles.featured_pokemon}>
+            <PokemonCard {...pokemon} />
+          </div>
+        )}
       </CardGrid>
     </main>
   );
